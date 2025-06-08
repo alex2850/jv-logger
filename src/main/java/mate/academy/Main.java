@@ -22,9 +22,7 @@ public class Main {
             logger.error("Authentication failed for login: bob", e);
             throw new RuntimeException("Username or password are incorrect", e);
         }
-        if (user != null) {
-            OrderService orderService = new OrderServiceImpl();
-            orderService.completeOrder(user.getUserId());
-        }
+        OrderService orderService = new OrderServiceImpl();
+        orderService.completeOrder(user.getUserId());
     }
 }
